@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Flask Demo</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+
+        <!--
+            Jinja2 syntax - for loop
+            Using the data in your database table, the Jinja2 for loop
+            renders HTML elements for each row of data you have. This creates a
+            basic HTML page that accurately represents all of the data without
+            having to manually update the HTML document.
+        -->
+
+        <!--
+
+            Looking at
+            the HTML document, there are percent signs in curly braces {% %} that
+            allow Python-like syntax to be added into the HTML file. Double curly
+            braces {{ }} represent expressions that are evaluated and printed on
+            the HTML page (i.e., if x is a variable with 5, the HTML page will
+            render it as 5).
+        -->
+
+        {% for row in data %}
+        <tr>
+            <th>{{row[0]}}</th>
+            <th>{{row[1]}}</th>
+            <th>{{row[2]}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
